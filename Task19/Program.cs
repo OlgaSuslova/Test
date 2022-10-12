@@ -4,38 +4,39 @@
 //12821 -> да
 //23432 -> да
 
-
-//Console.Clear();
-//Console.Write("Введите пятизначное число: ");
-//string number = (Console.ReadLine() ?? "");
-//CheckingNumber();
-
-//void CheckingNumber(string number)
-//{
-//  if (number[0]==number[4] || number[1]==number[3])
-//  {
-//    Console.WriteLine($"Ваше число: {number} - палиндром.");
-//  }
-//  else Console.WriteLine($"Ваше число: {number} - НЕ палиндром.");
-//}
-
 Console.Clear();
-Console.Write("Введите пятизначное число: ");
-string number = Console.ReadLine() ?? "";
+int num = GetNumberFromUser("Введите пятизначное число: ","Ошибка ввода!");
 
-
-void CheckingNumber(string number)
+int oldNumber = num;
+int newNumber = 0;
+while (num>0)
 {
-  if (number[0]==number[4] && number[1]==number[3])
-  {
-    Console.WriteLine($"{number} -> да ");
-  }
-  else Console.WriteLine($"{number} -> нет ");
+    int dif = num % 10;
+    newNumber = newNumber * 10 + dif;
+    num = num / 10;
+}
+
+if (newNumber == oldNumber)
+{
+    Console.WriteLine ($"{oldNumber} -> да ");
+}
+else 
+{
+    Console.WriteLine ($"{oldNumber} -> нет "); 
 }
 
 
-if (number!.Length == 5)
+
+
+int GetNumberFromUser(string message, string errorMessage)
 {
-  CheckingNumber(number);
+    while(true)
+      {
+         Console.Write(message);
+         bool isCorrect = int.TryParse(Console.ReadLine(), out int userNumber);
+         if(isCorrect)
+           return userNumber;
+
+        Console.WriteLine(errorMessage);
+      } 
 }
-else Console.WriteLine($"Вы ввели непятизначное число!");
