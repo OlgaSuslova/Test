@@ -5,10 +5,10 @@
  
  
 Console.Clear();
-int number1 = GetNumberFromUser("Enter your first number: ", "Error");
-int number2 = GetNumberFromUser("Enter your second number: ", "Error");
+int number1 = GetNumberFromUser("Enter number A: ", "Error");
+int number2 = GetNumberFromUser("Enter number B: ", "Error");
 
-int result = NumbersProduct(number1, number2);
+double result = NumbersProduct(number1, number2);
 Console.WriteLine($"{number1}, {number2} -> {result}");
 
 
@@ -25,9 +25,9 @@ int GetNumberFromUser(string message, string errorMessage)
     }
 }
 
-int NumbersProduct(int number1, int number2)
+double NumbersProduct(int number1, int number2)
 {
-    int result = Convert.ToInt32 (Math.Pow (number1, number2));
+    double result = Math.Pow (number1, number2);
     return result;
 }
 
