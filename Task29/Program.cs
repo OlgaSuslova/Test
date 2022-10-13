@@ -41,6 +41,7 @@ void PrintArray(int[] collection)
     Console.Write (", ");
     position++;
    }
-   Console.Write ("]");
+   Console.Write(collection[7]);
+   Console.Write (" ]");
 }
 
