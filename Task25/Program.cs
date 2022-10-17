@@ -27,8 +27,14 @@ int GetNumberFromUser(string message, string errorMessage)
 
 double NumbersProduct(int number1, int number2)
 {
-    double result = Math.Pow (number1, number2);
-    return result;
+      double res = 0;
+        for (int i = 1; i < number2; i++)
+           {
+               res = number1 * number2;
+           }
+        return res;
+
+    
 }
 
 
