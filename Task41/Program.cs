@@ -13,7 +13,7 @@ Console.Write(String.Join(", ", userArray));
 Console.Write($" -> {count}");
 
 
-
+//////////////////////////////////////////////////////
 int[] FillArray(int[] array)
 {
     int index = 0;
