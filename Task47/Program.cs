@@ -13,12 +13,12 @@ int rows = int.Parse(Console.ReadLine() ?? "");
 Console.Write("Введите количество столбцов массива: ");
 int columns = int.Parse(Console.ReadLine() ?? "");
 
-double[,] array = GetArray(rows, columns, 0, 10);
+double[,] array = GetArray(rows, columns, -9, 9);
 PrintArray(array);
 
 
 
-
+/////////////////////////////////////////////////////////////
 double[,] GetArray(int m, int n, int minValue, int maxValue)
 {
     double[,] result = new double[m, n];
