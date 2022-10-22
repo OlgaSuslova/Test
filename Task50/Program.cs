@@ -13,18 +13,16 @@ Console.Clear();
 Console.Write("Введите позицию элемента: ");
 int enternumber = int.Parse(Console.ReadLine() ?? "");
 
-int[,] array = GetArray(5, 5, 0, 9);
+int[,] array = GetArray(5, 5, -100, 100);
 PrintArray(array);
 
 Console.WriteLine();
-
-if (array[i, j] == enternumber)
-                Console.WriteLine($"{enternumber}");
-            else 
-                Console.WriteLine($"{enternumber} - > такого числа в массиве нет.");
+bool result = CheckUserNumber(array, enternumber);
+if (result) Console.WriteLine($"{enternumber}");
+else Console.WriteLine($"{enternumber} - > такого числа в массиве нет");
 
 
-
+/////////////////////////////////////////////////////////////
 int[,] GetArray(int m, int n, int minValue, int maxValue)
 {
     int[,] result = new int[m, n];
@@ -50,4 +48,12 @@ void PrintArray(int[,] inArray)
     }
 }
 
+bool CheckUserNumber (int[,] elements, int find)
+{
+    foreach(int el in elements)
+    {
+        if (el == find) return true;
+    }
+    return false;
+}
 
