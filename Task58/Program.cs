@@ -52,7 +52,7 @@ void PrintArray(int[,] inArray)
     }
 }
 
- int[,] GetArrayProduct(int[,] array1, int[,] array2)
+int[,] GetArrayProduct(int[,] array1, int[,] array2)
 {
     int[,] result = new int[array1.GetLength(0), array2.GetLength(1)];
 
