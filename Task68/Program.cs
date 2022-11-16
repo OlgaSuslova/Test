@@ -31,7 +31,7 @@ int Akkerman(int m, int n)
 {
     while (m != 0)
     {
-        m -= 1;
+        m = m - 1;
         if(n == 0)
             n = 1;
         else
