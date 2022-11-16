@@ -18,6 +18,7 @@ else
     result = SumMN(userNumberN, userNumberM, result);
 
 Console.Write(result);
+
 ////////////////////////////////
 int GetNumberFromUser(string message, string errorMessage)
 {
@@ -38,7 +39,7 @@ int SumMN(int userNumberM, int userNumberN, int result)
     {
         return result;
     }
-    result += userNumberM;
+    result = result + userNumberM;
     return(SumMN(userNumberM + 1, userNumberN, result));
 
 }
